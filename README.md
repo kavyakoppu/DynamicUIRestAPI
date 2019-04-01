@@ -1,7 +1,6 @@
 # DynamicUIRestAPI  
 ## Forecast Weather  
 This application provides the Dynamic UI for the weather forecast application.  
-Rest Webservices already developed are used from RestWSAndSwagger2 [https://github.uc.edu/koppuka/RestWSAndSwagger2]. Check this git repository's README.md for any further reference.
 
 ### Setup application in EC2 AWS 
 
@@ -32,4 +31,4 @@ This can be fetched from Description tab of Instances screen in EC2 console.
 3. Add/Update Weather Information for a Day  
 4. Delete Existing Weather Information for a Day  
 5. Forecast Weather  
-Select the the operation to be done and give the inputs if necessary then hit submit to get the corresponding output.  
+Select the the operation to be done from the drop down menu and give the necessary inputs then hit submit to get the corresponding output.  
