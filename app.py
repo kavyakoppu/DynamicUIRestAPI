@@ -50,7 +50,7 @@ def gethistoricalDataOfADate(inputDate):
 
 @app.route('/historical/', methods=['POST'])
 def addHistoricalData():
-    print(request.data)
+    # print(request.data)
     reqBodyData = json.loads(request.data)
     if validateDate(reqBodyData["DATE"]) :
         deleteHistoricalDataOfADate(reqBodyData["DATE"])
@@ -105,7 +105,7 @@ def getForecastForAWeek(inputDate):
             #     # Do the operation you wanted to do for "key not present in dict".
             # else:
             if inputDate in dict.keys(dictData):
-                print("found")
+                # print("found")
                 data = dictData[inputDate]
                 forecast.append(data)
             else :
@@ -113,19 +113,19 @@ def getForecastForAWeek(inputDate):
                 #get past year data.. if not available, then generate random
                 tempDate = datetime.strptime(inputDate, "%Y%m%d").date()
                 currentYear = int(tempDate.year)
-                print(currentYear)
+                # print(currentYear)
                 if(currentYear >= 2013) :
                     year = 2013
                     dummyDate = date(year, tempDate.month, tempDate.day)
                     dummyDateFormatted = dummyDate.strftime("%Y%m%d")
-                    print(dummyDate)
+                    # print(dummyDate)
                     while (dummyDateFormatted not in dict.keys(dictData)) and year<2019:
                         year+=1
                         dummyDate = date(year, tempDate.month, tempDate.day)
                         dummyDateFormatted = dummyDate.strftime("%Y%m%d")
                     data = {"DATE":  inputDate, "TMAX": dictData[dummyDateFormatted]["TMAX"], "TMIN": dictData[dummyDateFormatted]["TMIN"]}
                     forecast.append(data)
-                    print(data)
+                    # print(data)
                     pastfound = True
                 if (not pastfound) or (currentYear < 2013) :
                     tempDate = datetime.strptime(inputDate, "%Y%m%d").date()

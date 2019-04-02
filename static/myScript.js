@@ -123,7 +123,7 @@ $('#submit').click(function(){
                 url: baseurl+"historical/"+dateParam,
                 statusCode: { 
                     200: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         output = "DATE:" + data.DATE + "\n" + "TMAX:" + data.TMAX + "\n" + "TMIN:" + data.TMIN;
                         $("#displayWeatherInfo").val(output);
                         $('#displayWeatherInfo').show();
@@ -148,7 +148,7 @@ $('#submit').click(function(){
         var tmax = document.getElementById('tmax');
         var tmin = document.getElementById('tmin');
         var senddata = {"DATE": dateParam, "TMAX": tmax.value, "TMIN": tmin.value};
-        console.log(senddata);
+        // console.log(senddata);
         if(!(dateParam == undefined || dateParam == "" || tmax.value == undefined || tmax.value == "" || tmin.value == undefined || tmin.value == "" || tmax.value <= tmin.value)) {
             $.ajax({
                 type: 'POST',
